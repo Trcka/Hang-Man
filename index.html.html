@@ -10,6 +10,9 @@
 
 <h1 id="blanks"></h1>
 
+<h2 >attempts left </h2>
+<h2 id="attempts"></h2>
+
 
 
 <script>
@@ -32,7 +35,7 @@ function game(){
 	var	blanks = " _ ";
 	console.log(blanks.repeat(wordLength))
 
-	var blanksArray = blanks.repeat(wordLength)
+	var blanksArray = [blanks.repeat(wordLength)]
 
 	console.log(blanksArray)
 
@@ -42,31 +45,51 @@ function game(){
 	blanks()
 	function guess(){
 
-		if(randomWord===words[0]){
-			console.log("html")
-		}
-		else if(randomWord===words[1]){
-			console.log("css")
-		}
-		else if(randomWord===words[2]){
-			console.log("javascript")
-		}
-		else if(randomWord===words[3]){
-			console.log("python")
-		}
-		else if(randomWord===words[4]){
-			console.log("Ruby")
-		}
-		else if(randomWord===words[5]){
-			console.log("sql")
-		}else if(randomWord===words[6]){
-			console.log("java")
-		}
-		else{
-			console.log("scratch")
-		}
-	}
-	guess()
+		
+		//userguess
+		 document.onkeyup = function(event) {
+		 	if(randomWord.indexOf(event.key) !== -1){
+		 		console.log("is a key")
+		 	}
+		 	else{
+		 		console.log("is not a key")
+
+		 	}
+		 }
+
+		//test to see if its in there if else .indexOf
+		// for loop to see if there are more than one of that letter
+
+
+		// if(randomWord===words[0]){
+		// 	console.log("html")
+			
+
+		// }
+		// else if(randomWord===words[1]){
+		// 	console.log("css")
+		// }
+		// else if(randomWord===words[2]){
+		// 	console.log("javascript")
+		// }
+		// else if(randomWord===words[3]){
+		// 	console.log("python")
+		// }
+		// else if(randomWord===words[4]){
+		// 	console.log("Ruby")
+		// }
+		// else if(randomWord===words[5]){
+		// 	console.log("sql")
+		// }else if(randomWord===words[6]){
+		// 	console.log("java")
+		// }
+		// else{
+		// 	console.log("scratch")
+		// }
+	// }
+
+}
+guess()	// guess()
 }
 game()
 
