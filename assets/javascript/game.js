@@ -1,7 +1,20 @@
 //randomly select word
-var words =["html","css","javascript"];
-var wordSelected = words[Math.floor(Math.random() * words.length)];
-console.log(wordSelected);
+var words = ["html","css","javascript"];
+
+var attempts = 0
+
+var randomWord = words[Math.floor(Math.random() * words.length)];
+
+console.log(randomWord)
+
+function game(){
+
+
+}
+
+
+
+
 
 //display word in _'s be able to change number of _'s use events-examples for help to diplay stuff in html through javascript
 

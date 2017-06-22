@@ -3,13 +3,80 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Hang Man</title>
+
 	</head>
 	<body>
-<!-- 
-1.Start with looks(bootstrap/css) and think of theme
-2.come up with list of Proggramming laugueges make an array of them in the global scope so everything in it can call to it
-3.make a random number gererator that will randomly select a PL for the work
-4. useing scope you can redifine varibles  -->
-		
+
+
+<h1 id="blanks"></h1>
+
+
+
+<script>
+
+var words = ["html","css","javascript","python","Ruby","sql","Java","scratch"];
+
+var attempts = 0;
+
+var lettersTry =[];
+
+var randomWord = words[Math.floor(Math.random() * words.length)];
+
+var wordLength = randomWord.length
+
+console.log(wordLength);
+
+function game(){
+	function blanks(){
+
+	var	blanks = " _ ";
+	console.log(blanks.repeat(wordLength))
+
+	var blanksArray = blanks.repeat(wordLength)
+
+	console.log(blanksArray)
+
+	document.querySelector("#blanks").innerHTML = blanksArray;
+
+	}
+	blanks()
+	function guess(){
+
+		if(randomWord===words[0]){
+			console.log("html")
+		}
+		else if(randomWord===words[1]){
+			console.log("css")
+		}
+		else if(randomWord===words[2]){
+			console.log("javascript")
+		}
+		else if(randomWord===words[3]){
+			console.log("python")
+		}
+		else if(randomWord===words[4]){
+			console.log("Ruby")
+		}
+		else if(randomWord===words[5]){
+			console.log("sql")
+		}else if(randomWord===words[6]){
+			console.log("java")
+		}
+		else{
+			console.log("scratch")
+		}
+	}
+	guess()
+}
+game()
+
+</script>
+// <!--
+// 1.Start with looks(bootstrap/css) and think of theme
+// 2.come up with list of Proggramming laugueges make an array of them in the global scope so everything in it can call to it
+// 3.make a random number gererator that will randomly select a PL for the work
+// 4. useing scope you can redifine varibles  -->
+
 	</body>
+	<link rel="stylesheet" href="assets/javascript/game.js" type="text/javascript">
 </html>
