@@ -29,11 +29,13 @@ var wordLength = randomWord.length
 
 console.log(wordLength);
 
-function game(){
+document.onkeyup = function(event) {
+userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+}
+
 	function blanks(){
 
 	var	blanks = " _ ";
-	console.log(blanks.repeat(wordLength))
 
 	var blanksArray = [blanks.repeat(wordLength)]
 
@@ -41,66 +43,39 @@ function game(){
 
 	document.querySelector("#blanks").innerHTML = blanksArray;
 
-	
-	// blanks()
-	// function guess(){
-
-		
 		//userguess
 		//test to see if its in there if else .indexOf
-		 document.onkeyup = function(event) {
-		 	if(randomWord.indexOf(event.key) !== -1){
-		 		console.log("is a key")
-		 		var letterIn = randomWord.indexOf(event.key)
-		 		console.log(letterIn)
-		 		console.log(blanksArray)
-		 		 var replace = blanksArray.replace(randomWord.indexOf(event.key),"a")
-		 		 console.log (replace)
-		 	}
-		 	else{
-		 		console.log("is not a key")
 
-		 	}
-		 }
-
-		// for loop to see if there are more than one of that letter
+	}
 
 
-
-
-
-		// if(randomWord===words[0]){
-		// 	console.log("html")
-			
-
-		// }
-		// else if(randomWord===words[1]){
-		// 	console.log("css")
-		// }
-		// else if(randomWord===words[2]){
-		// 	console.log("javascript")
-		// }
-		// else if(randomWord===words[3]){
-		// 	console.log("python")
-		// }
-		// else if(randomWord===words[4]){
-		// 	console.log("Ruby")
-		// }
-		// else if(randomWord===words[5]){
-		// 	console.log("sql")
-		// }else if(randomWord===words[6]){
-		// 	console.log("java")
-		// }
-		// else{
-		// 	console.log("scratch")
-		// }
-	// }
-
+function updateGame() {
+  for (var i=0; i<randomWord.length; i++){
+   if(userGuess === randomWord[i]) {
+     var fill = document.getElementsByClassName('blanks');
+     fill[i+1].innerHTML=userGuess;
+    //  toWin++;
+    //  console.log(toWin);
+   }
+  }
 }
 blanks()
+document.onkeyup = function(event) {
 
-}
-game()
+ if(randomWord.indexOf(event.key) !== -1){
+	 console.log("is a key")
+	 var letterIn = randomWord.indexOf(event.key)
+	 console.log(letterIn)
+		updateGame()
+
+ }
+ else{
+	 console.log("is not a key")
+ }
+
+ }
+
+
 
 </script>
 // <!--
