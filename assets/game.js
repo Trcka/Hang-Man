@@ -41,7 +41,7 @@ function updateSpaces() {
   }
 }
 
-//function resets the game when the user loses or wins
+
 function resetGame() {
   game.randomWord();
   randomIndex = game.randomWord();
@@ -55,17 +55,17 @@ function resetGame() {
   createSpaces();
 }
 
-//calls the createSpaces function to create underscores equal to the length of the word to be guessed.
+
 createSpaces();
 
-//Lets the user know they start with 0 wins
+
 game.printWins();
 
-//function to be ran for every user guess
+
 document.onkeyup = function(event) {
     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-    //if the user guess is part of the randomWord
+    
     if(randomWord.indexOf(userGuess) !== -1 && game.wrong.indexOf(userGuess) ===-1){
 			updateSpaces();
 		}
